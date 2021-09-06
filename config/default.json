@@ -1,0 +1,16 @@
+{
+    "Server": {
+        "PORT": 3010,
+        "MODE": "development"
+    },
+    "DB": {
+        "URI": "mongodb+srv://root:root@cluster0.lpep6.mongodb.net/todo-io?retryWrites=true&w=majority"    
+    },
+    "Session": {
+        "JWT_SECRET": "jdhdhd-kjfjdhrhrerj-uurhr-jjge",
+        "REFRESH_TOKEN_SECRET": "fgkjddshfdjh773bdjsj84-jdjd774",
+        "SESSION_EXPIRY": "60 * 15",
+        "REFRESH_TOKEN_EXPIRY": "60 * 60 * 24 * 30",
+        "COOKIE_SECRET": "jhdshhds884hfhhs-ew6dhjd"
+    }
+}
