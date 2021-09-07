@@ -1,7 +1,8 @@
 {
     "Server": {
         "PORT": 3010,
-        "MODE": "development"
+        "MODE": "development",
+        "WHITELIST_DOMAINS":"http://localhost:3000"
     },
     "DB": {
         "URI": "mongodb+srv://root:root@cluster0.lpep6.mongodb.net/todo-io?retryWrites=true&w=majority"    

@@ -16,6 +16,10 @@ require("./authenticate")
 const { PORT } = config.get("Server");
 const DBConfig = config.get("DB");
 
+const whitelist = config.get("Server.WHITELIST_DOMAINS")
+    ? config.get("Server.WHITELIST_DOMAINS").split(",")
+    : []
+
 const corsOptions = {
     origin: function (origin, callback) {
         if (!origin || whitelist.indexOf(origin) !== -1) {

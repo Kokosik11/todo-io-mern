@@ -1,0 +1,3 @@
+[submodule "todo-io-client"]
+	path = client
+	url = https://github.com/Kokosik11/todo-io-client
