@@ -7,7 +7,7 @@ const dev = config.get("Server.MODE") !== "production";
 
 exports.COOKIE_OPTIONS = {
     httpOnly: true,
-    secure: !dev,
+    secure: true,
     signed: true,
     maxAge: eval(config.get("Session.REFRESH_TOKEN_EXPIRY")) * 1000,
     sameSite: "none"

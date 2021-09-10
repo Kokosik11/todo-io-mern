@@ -75,7 +75,7 @@ exports.refreshToken = (req, res, next) => {
     
                     if(tokenIndex === -1) {
                         res.statusCode = 401;
-                        res.send("Unauthorized");
+                        res.send("Unauthorized index");
                     } else {
                         const token = getToken({ _id: userID });
                         const newRefreshToken = getRefreshToken({ _id: userID });
@@ -93,7 +93,7 @@ exports.refreshToken = (req, res, next) => {
                     }
                 } else {
                     res.statusCode = 401;
-                    res.send("Unauthorized");
+                    res.send("Unauthorized user");
                 }
             }, 
             err => next(err)
@@ -101,11 +101,11 @@ exports.refreshToken = (req, res, next) => {
         }
         catch(err) {
             res.statusCode = 401;
-            res.send("Unauthorized");
+            res.send("Unauthorized 1");
         }
     } else {
         res.statusCode = 401;
-        res.send("Unauthorized");
+        res.send("Unauthorized 2");
     }
 }
 

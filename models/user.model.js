@@ -10,6 +10,48 @@ const Session = new Schema({
     },
 })
 
+const Todo = new Schema({
+    title: {
+        type: String,
+        default: "",
+    },
+    isCompleted: {
+        type: Boolean,
+        default: false,
+    }
+})
+
+const Member = new Schema({
+    Members: [String]
+}, { _id: false });
+
+const Action = new Schema({
+    title: { 
+        type: String, 
+        default: "",
+    },
+    members: {
+        type: [Member],
+    },
+    Todoes: {
+        type: [Todo],
+    },
+})
+
+const Details = new Schema({
+    birth: {
+        type: String,
+        default: "",
+    },
+    avatarUrl: {
+        type: String,
+        default: "",
+    },
+    Actions: {
+        type: [Action]
+    }
+})
+
 const User = new Schema({
     username: {
         type: String,
@@ -22,6 +64,9 @@ const User = new Schema({
     refreshToken: {
         type: [Session],
     },
+    details: {
+        type: [Details]
+    }
 })
 
 User.set("toJSON", {
