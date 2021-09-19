@@ -4,6 +4,10 @@ const { verifyUser } = require("../authenticate.js");
 const controller = require("../controllers/user.controller.js");
 const Router = express.Router();
 
+const ActionRouter = require("./action.router.js");
+
+Router.use("/action", ActionRouter);
+
 Router.get("/logout", verifyUser, controller.logout);
 Router.get("/me", verifyUser, controller.me);
 Router.post("/refreshToken", controller.refreshToken);

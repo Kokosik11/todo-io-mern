@@ -26,9 +26,17 @@ const Member = new Schema({
 }, { _id: false });
 
 const Action = new Schema({
+    creationDate: {
+        type: Date,
+        default: Date.now()
+    },
     title: { 
         type: String, 
         default: "",
+    },
+    description: {
+        type: String,
+        default: "Description of the project"
     },
     members: {
         type: [Member],
@@ -48,7 +56,8 @@ const Details = new Schema({
         default: "",
     },
     Actions: {
-        type: [Action]
+        type: [Action],
+        default: []
     }
 })
 
@@ -65,7 +74,8 @@ const User = new Schema({
         type: [Session],
     },
     details: {
-        type: [Details]
+        type: Details,
+        default: {}
     }
 })
 
