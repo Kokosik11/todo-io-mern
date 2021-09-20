@@ -10,7 +10,7 @@ const Session = new Schema({
     },
 })
 
-const Todo = new Schema({
+const Action = new Schema({
     title: {
         type: String,
         default: "",
@@ -25,7 +25,7 @@ const Member = new Schema({
     Members: [String]
 }, { _id: false });
 
-const Action = new Schema({
+const Project = new Schema({
     creationDate: {
         type: Date,
         default: Date.now()
@@ -42,7 +42,7 @@ const Action = new Schema({
         type: [Member],
     },
     Todoes: {
-        type: [Todo],
+        type: [Action],
     },
 })
 
@@ -55,8 +55,8 @@ const Details = new Schema({
         type: String,
         default: "",
     },
-    Actions: {
-        type: [Action],
+    Project: {
+        type: [Project],
         default: []
     }
 })

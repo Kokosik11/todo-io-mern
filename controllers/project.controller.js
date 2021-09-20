@@ -4,9 +4,9 @@ const config = require("config");
 
 const { getToken, COOKIE_OPTIONS, getRefreshToken } = require("../authenticate");
 
-exports.getAction = (req, res, next) => {
+exports.getProjects = (req, res, next) => {
     User.findById(req.user._id).then(user => {
-        res.send(user.details.Actions);
+        res.send(user.details.Project);
     })
     // res.send(req.user.details.Actions);
 }
@@ -14,7 +14,7 @@ exports.getAction = (req, res, next) => {
 exports.create = (req, res, next) => {
     User.findByIdAndUpdate(req.user._id).then(
         user => {
-            user.details.Actions = [ ...user.details.Actions, {
+            user.details.Project = [ ...user.details.Project, {
                 title: req.body.title
             }]
             user.save((err, user) => {
