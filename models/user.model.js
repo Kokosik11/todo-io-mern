@@ -41,7 +41,7 @@ const Project = new Schema({
     members: {
         type: [Member],
     },
-    Todoes: {
+    actions: {
         type: [Action],
     },
 })

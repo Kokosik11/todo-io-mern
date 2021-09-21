@@ -12,10 +12,13 @@ exports.getProjects = (req, res, next) => {
 }
 
 exports.create = (req, res, next) => {
+    console.log("hi")
     User.findByIdAndUpdate(req.user._id).then(
         user => {
             user.details.Project = [ ...user.details.Project, {
-                title: req.body.title
+                title: req.body.projectTitle,
+                description: req.body.projectDescription,
+                actions: [...req.body.projectActions],
             }]
             user.save((err, user) => {
                 if (err) {
